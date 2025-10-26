@@ -5,7 +5,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <parent>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-parent</artifactId>
-<version>3.2.5</version> <!-- CAMBIO AQUÍ -->
+<version>3.2.5</version>
 <relativePath/>
 </parent>
 <groupId>com.proyecto</groupId>
@@ -41,6 +41,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <scope>test</scope>
 </dependency>
 
+<!-- Base de datos en memoria para tests -->
+<dependency>
+<groupId>com.h2database</groupId>
+<artifactId>h2</artifactId>
+<scope>test</scope>
+</dependency>
+
 <dependency>
 <groupId>net.sf.barcode4j</groupId>
 <artifactId>barcode4j</artifactId>
@@ -50,20 +57,19 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <dependency>
 <groupId>com.google.zxing</groupId>
 <artifactId>core</artifactId>
-<version>3.5.3</version> <!-- Actualizado -->
+<version>3.5.3</version>
 </dependency>
 
-<!-- ELIMINADA LA VERSIÓN 1.7 DUPLICADA -->
 <dependency>
 <groupId>org.apache.xmlgraphics</groupId>
 <artifactId>batik-bridge</artifactId>
-<version>1.17</version> <!-- ACTUALIZADO -->
+<version>1.17</version>
 </dependency>
 
 <dependency>
 <groupId>org.apache.xmlgraphics</groupId>
 <artifactId>xmlgraphics-commons</artifactId>
-<version>2.9</version> <!-- ACTUALIZADO -->
+<version>2.9</version>
 </dependency>
 
 <dependency>
@@ -86,5 +92,5 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 </plugin>
 </plugins>
 </build>
-<!--Forzar rebuild: 25-->
+<!--Forzar rebuild: 26-->
 </project>
