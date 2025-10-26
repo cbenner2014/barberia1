@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  @Controller
 public class HomeController {
 	
-	 @GetMapping("/")
+	 @GetMapping("/barberia")
 	    public String home() {
 	        return "index"; // nombre del archivo Thymeleaf
 	 }
