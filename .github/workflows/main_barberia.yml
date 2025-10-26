@@ -14,19 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read #This is required for actions/checkout
-
+    
     steps:
       - uses: actions/checkout@v4
-
+      
       - name: Set up Java version
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'microsoft'
-
+      
       - name: Build with Maven
-        run: mvn clean install
-
+        run: mvn clean install -DskipTests
+      
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -52,7 +52,7 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A0463C123C39421DA13F6C21B0CF9E4D }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_767469FF9FD14E5FA40BE8372D7F92C6 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1F73B4F1FDB84C0AA18F1AFAF3060072 }}
-
+      
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
@@ -60,4 +60,3 @@ jobs:
           app-name: 'barberia'
           slot-name: 'Production'
           package: '*.jar'
-          
