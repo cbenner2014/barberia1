@@ -8,6 +8,6 @@ public class HomeController {
 	
 	 @GetMapping("/")
 	    public String home() {
-	        return "index"; // nombre del archivo Thymeleaf
+	        return "Index2"; // nombre del archivo Thymeleaf
 	 }
 }
